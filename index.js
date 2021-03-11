@@ -7,7 +7,7 @@ const Mongoose = require("mongoose");
 const app =express();
 app.set('view engine','ejs');
 app.use(express.static('./public'));
-app.use(bodyParser.urlencoded({ectented:true}));
+app.use(bodyParser.urlencoded({extented:true}));
 
 connectionurl="mongodb+srv://Rupan:Rupan@9733199713@cluster0.whfx5.mongodb.net/information?retryWrites=true&w=majority"
 Mongoose.connect(connectionurl,{useNewUrlParser: true,useUnifiedTopology:true})
@@ -53,8 +53,8 @@ const volMessage = Mongoose.model("volMessage", volschema);
         res.render("home");
     })
 
-    app.get("/About",function(req,res){
-        res.render("about");
+    app.get("/about",function(req,res){
+        res.render("About");
     })
     app.get("/donation",function(req,res){
         res.render("donation");
