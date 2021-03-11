@@ -1,0 +1,1040 @@
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+	
+	font-size:22px;
+	line-height: 32px;
+	color: #5e5c5c;
+	margin: 0;
+	padding: 0;
+	word-wrap:break-word !important;
+	font-family: 'Open Sans', sans-serif;
+	}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: rgb(170, 168, 168);
+}	
+
+h3 {
+	font-size: 30px;
+	line-height: 34px;
+	text-align: center;
+	color: #FFF;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+h1 {
+	/* margin-top: 100px; */
+	text-align:center;
+	font-size:40px;
+	line-height: 70px;
+	font-family: 'Bree Serif', 'serif';
+	}
+
+#container {
+	margin: 0 auto;
+	max-width: 890px;
+}
+
+/* p {
+	text-align: center;
+} */
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color: #254441;
+}
+
+#logo {
+	display: block;
+	padding: 0 30px;
+	float: left;
+	font-size:20px;
+	line-height: 60px;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color: #254441;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #8b8a8a; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: #629b83; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' '; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: #254441;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: #1f5545;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #212121; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+
+
+
+
+
+/* gal */
+:root {
+    --darkgray: #212329;
+    --black: #222;
+    --lightgray: #b1b1b1;
+    --brightred: #F9423D;
+    --white: #fff;
+    --lightred: #f9433dcc;
+    --lightblue: #337AF1;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+
+
+
+h1{
+    color: #000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+    
+}
+
+
+
+.services-section {
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+
+.services-heading {
+    color: var(--darkgray);
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(80px);
+    padding: 0;
+    /*background-color: var(--darkgray);*/
+    height: auto;
+}
+
+.services-cell {
+    flex: 0 1 250px;
+    max-width: 250px;
+    height: 275px;
+    margin: 2px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    box-shadow:  0px 0px 15px 0px rgba(0,0,0,0.8);
+    clip-path: polygon( 50% 0%, 
+                        100% 25%,
+                        100% 75%,
+                        50% 100%,
+                        0% 75%,
+                        0% 25%);
+    cursor: pointer;
+}
+
+.services-cell_img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.services-cell-text {
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: opacity 350ms;
+    text-shadow: 2px 2px 2px var(--darkgray);
+}
+
+.services-cell::before, .services-cell::after, .services-cell_img {
+    top: -50%;
+    width: 100%;
+    height: 200%;
+    display: block;
+    position: absolute;
+    clip-path: polygon( 50% 0%, 
+                        100% 25%,
+                        100% 75%,
+                        50% 100%,
+                        0% 75%,
+                        0% 25%);
+    z-index: -1;
+}
+
+.services-cell:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.2);
+    z-index: 99;
+    overflow: hidden;
+}
+
+.services-cell::before {
+    content: "";
+    position: absolute;
+    opacity: 0.4;
+    width: 350px;
+    height: 70px;
+    background-color: var(--white);
+    top: 50;
+    left: 0;
+    z-index: 1;
+    transform: rotate(45deg);
+    transition: transform 1.5s;
+}
+
+.services-cell:hover::before {
+    transform: translate(-100px, 600%) rotate(45deg);
+    transition: transform 0.5s;
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+/* slide */
+
+/* html {
+    box-sizing: border-box;
+  } */
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  article, header, section, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+      display: block;
+  }
+ 
+  a{
+      
+      text-decoration: none;
+      outline: none;
+      display: inline;
+  }
+  a:hover, a:focus {
+      color: #d7d8d4;
+  }
+  
+  h2 {
+      color: #333333;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0;
+      line-height: normal;
+      text-transform:uppercase;
+  }
+  h2 span {
+      display: block;
+      padding: 0;
+      font-size: 18px;
+      opacity: 0.7;
+      margin-top: 5px;
+      text-transform:uppercase;
+  }
+  
+  #float-right{
+      float:right;	
+  }
+  
+  /* ******************************************************
+      Script Top
+  *********************************************************/
+  
+  .ScriptTop {
+      background: #fff none repeat scroll 0 0;
+      float: left;
+      font-size: 0.69em;
+      font-weight: 600;
+      line-height: 2.2;
+      padding: 12px 0;
+      text-transform: uppercase;
+      width: 100%;
+  }
+  
+  /* To Navigation Style 1*/
+  .ScriptTop ul {
+      margin: 24px 0;
+      padding: 0;
+      text-align: left;
+  }
+  .ScriptTop li{
+      list-style:none;	
+      display:inline-block;
+  }
+  .ScriptTop li a {
+      background: #6a4aed none repeat scroll 0 0;
+      color: #fff;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 5px 18px;
+      text-decoration: none;
+      text-transform: capitalize;
+  }
+  .ScriptTop li a:hover{
+      background:#000;
+      color:#fff;
+  }
+  
+  
+  /* ******************************************************
+      Script Header
+  *********************************************************/
+  
+  .ScriptHeader {
+      float: left;
+      width: 100%;
+      padding: 2em 0;
+  }
+  .rt-heading {
+      margin: 0 auto;
+      text-align:center;
+  }
+  .Scriptcontent{
+      
+      margin: 0 auto;
+  }
+  .ScriptHeader h1{
+      font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+      color: #6a4aed;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0;
+      line-height: normal;
+  
+  }
+  .ScriptHeader h2 {
+      color: #312c8f;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 5px 0 0;
+      line-height: normal;
+  
+  }
+  .ScriptHeader h1 span {
+      display: block;
+      padding: 0;
+      font-size: 22px;
+      opacity: 0.7;
+      margin-top: 5px;
+  
+  }
+  .ScriptHeader span {
+      display: block;
+      padding: 0;
+      font-size: 22px;
+      opacity: 0.7;
+      margin-top: 5px;
+  }
+  
+  
+  
+  
+  /* ******************************************************
+      Live Demo
+  *********************************************************/
+  
+  
+  
+
+
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  /* ******************************************************
+      Responsive Grids Slider
+  *********************************************************/
+  
+  @keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+    }
+    
+    body { margin: 0; } 
+    div#slider { overflow: hidden; }
+    div#slider figure img { width: 20%; float: left; }
+    div#slider figure { 
+      position: relative;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      animation: 20s slidy infinite; 
+    }
+
+
+/* card */
+    .wrapper {
+        width: 100vw;
+        margin: 0 auto;
+        height: 400px;
+        background-color: #161616;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: all 0.3s ease;
+     }
+     
+     @media screen and (max-width: 767px) {
+        .wrapper {
+           height: 700px;
+        }
+     }
+     
+     .content {
+        max-width: 1024px;
+        width: 100%;
+        padding: 0 4%;
+        padding-top: 250px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     
+     @media screen and (max-width: 767px) {
+        .content {
+           padding-top: 300px;
+           flex-direction: column;
+        }
+     }
+     
+     .card {
+        width: 100%;
+        max-width: 300px;
+        min-width: 200px;
+        height: 250px;
+        background-color: #254441;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+        border: 2px solid rgba(7, 7, 7, 0.12);
+        font-size: 16px;   
+        transition: all 0.3s ease;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all 0.3s ease;
+     }
+     
+     .icon {
+        margin: 0 auto;
+        width: 100%;
+        height: 80px;
+        max-width:80px;
+        background: linear-gradient(90deg, #FF7E7E 0%, #FF4848 40%, rgba(0, 0, 0, 0.28) 60%);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        transition: all 0.8s ease;
+        background-position: 0px;
+        background-size: 200px;
+     }
+     
+     .material-icons.md-18 { font-size: 18px; }
+     .material-icons.md-24 { font-size: 24px; }
+     .material-icons.md-36 { font-size: 36px; }
+     .material-icons.md-48 { font-size: 48px; }
+     
+     .card .title {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        margin-top: 30px;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+     }
+     
+     .card .text {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 20px;
+        color: white;
+        font-weight: 200;
+        letter-spacing: 2px;
+        opacity: 0;
+        max-height:0;
+        transition: all 0.3s ease;
+     }
+     
+     .card:hover {
+        height: 270px;
+     }
+     
+     .card:hover .info {
+        height: 90%;
+     }
+     
+     .card:hover .text {
+        transition: all 0.3s ease;
+        opacity: 1;
+        max-height:40px;
+     }
+     
+     .card:hover .icon {
+        background-position: -120px;
+        transition: all 0.3s ease;
+     }
+     
+     .card:hover .icon i {
+        background: linear-gradient(90deg, #FF7E7E, #FF4848);
+        -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+        opacity: 1;
+        transition: all 0.3s ease;
+     }
+
+
+
+
+
+
+
+     /* clearfix */
+
+     .clearfix {
+         color: #000;
+        overflow: auto;
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Hind Siliguri', sans-serif;
+      }
+      
+      .img2 {
+        float: left;
+      }
+
+
+
+
+      /* gallary */
+
+      @import url("https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap");
+
+
+
+      /* Rounded border */
+hr.rounded {
+    border-top: 1px solid #bbb;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+
+ 
+
+
+ 
+     /* pic text */
+
+     * {
+        box-sizing: border-box;
+        font-family: 'Hind Siliguri', sans-serif;
+      }
+      
+      /* Create two equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+        
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        
+      }
+
+      /* button */
+      .btn {
+        background-color: #254441;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 1;
+        transition: 0.3s;
+        
+      }
+      .btn:hover {opacity: 0.6}
+
+
+
+
+
+ 
+
+/* gallary */
+      
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+/* :root {
+	
+	font-size: 10px;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+} */
+
+body {
+	min-height: 100vh;
+	background-color: #fafafa;
+}
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+
+.heading {
+	
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0;
+	color: #1a1a1a;
+    margin-top: 20px;
+}
+
+.heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+The following rule will only run if your browser supports CSS grid.
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+
+h6 {
+
+  text-align: center;
+}
+
+/* footer */
+/* REMOVE THIS, USE YOUR OWN  */
+html,body {
+    margin: 0;
+    padding: 0;
+   
+  }
+  .dummy_page {
+    height: 200px;
+    width: 100%;
+    background-color: #f0f0f0;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 60px 0px;
+  }
+  /* STYLES SPECIFIC TO FOOTER  */
+  .footer {
+    width: 100%;
+    position: relative;
+    height: auto;
+    background-color: #254441;
+  }
+  .footer .col {
+    width: 190px;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+  }
+  .footer .col h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 20px 0px 5px 0px;
+    color: rgba(255,255,255,0.2);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.250em;
+  }
+  .footer .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .footer .col ul li {
+    color: #999999;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+  }
+  .social ul li {
+    display: inline-block;
+    padding-right: 5px !important;
+  }
+  
+  .footer .col ul li:hover {
+    color: #ffffff;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+  }
+  .clearfix {
+    clear: both;
+  }
+  @media only screen and (min-width: 1280px) {
+    .contain {
+      width: 800px;
+      margin: 0 auto;
+      
+  }
+  @media only screen and (max-width: 1139px) {
+    .contain .social {
+      width: 1000px;
+      display: block;
+    }
+    .social h1 {
+      margin: 0px;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    .footer .col {
+      width: 33%;
+    }
+    .footer .col h1 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+      .footer .col {
+        width: 50%;
+      }
+      .footer .col h1 {
+        font-size: 14px;
+      }
+      .footer .col ul li {
+        font-size: 13px;
+      }
+  }
+  @media only screen and (max-width: 340px) {
+    .footer .col {
+      width: 100%;
+    }
+  }
