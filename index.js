@@ -6,7 +6,7 @@ const Mongoose = require("mongoose");
 
 const app =express();
 app.set('view engine','ejs');
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ectented:true}));
 
 connectionurl="mongodb+srv://Rupan:Rupan@9733199713@cluster0.whfx5.mongodb.net/information?retryWrites=true&w=majority"
