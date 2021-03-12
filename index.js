@@ -9,7 +9,7 @@ app.set('view engine','ejs');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extented:true}));
 
-connectionurl="mongodb+srv://Rupan:Rupan@9733199713@cluster0.whfx5.mongodb.net/information?retryWrites=true&w=majority"
+connectionurl="mongodb+srv://Rupan:Rupan@01@cluster0.whfx5.mongodb.net/information?retryWrites=true&w=majority"
 Mongoose.connect(connectionurl,{useNewUrlParser: true,useUnifiedTopology:true})
 .then(()=>console.log("databaseconnected"))
 .catch((error)=>console.log("not connected"));
