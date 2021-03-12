@@ -2,6 +2,7 @@ const express = require ("express");
 const bodyParser = require ("body-parser");
 const ejs=require ("ejs");
 const Mongoose = require("mongoose");
+const nodemailer = require('nodemailer');
 
 
 const app =express();
@@ -56,6 +57,9 @@ const volMessage = Mongoose.model("volMessage", volschema);
     app.get("/about",function(req,res){
         res.render("About");
     })
+    app.get("/ourteam",function(req,res){
+        res.render("Ourteam");
+    })
     app.get("/donation",function(req,res){
         res.render("donation");
     })
@@ -77,6 +81,7 @@ const volMessage = Mongoose.model("volMessage", volschema);
     }
     const newpost=new postMessage(input);
       await newpost.save();
+      mail(inputvol.email)
       res.redirect("/")
        console.log(firstname);
     })
@@ -95,13 +100,14 @@ const volMessage = Mongoose.model("volMessage", volschema);
     }
     const newposthelp=new helpMessage(inputhelp);
       await newposthelp.save();
+      mail(inputhelp.email)
       res.redirect("/")
        console.log(firstname);
-    })
+    });
 
     app.get("/vol",function(req,res){
         res.render("vol")
-    })
+    });
     app.post("/vol",async function(req,res){
      var inputvol={ 
          fullname:req.body.fullname,
@@ -113,10 +119,35 @@ const volMessage = Mongoose.model("volMessage", volschema);
     }
     const newpostvol=new volMessage(inputvol);
       await newpostvol.save();
+      mail(inputvol.email)
       res.redirect("/")
        console.log(firstname);
-    })
-
+    });
+    function mail(adres){
+        let transporter = nodemailer.createTransport({
+            service:'gmail',
+            auth:{
+                user:'rupanbiswas08@gmail.com',
+                pass:'Rupan@01'
+            }
+        });
+        
+        let mailoptions ={
+            from:'rupanbiswas08@gmail.com',
+            to:`${adres}`,
+            subject:'testing',
+            text:'Thank you for contacting. We will get back to you'
+        };
+        
+        transporter.sendMail(mailoptions, function (err, info) {
+            if(err){
+                console.log(err)
+            }else{
+                console.log("it worked")
+            }
+         });
+        
+        }
     let port = process.env.PORT;
     if (port == null || port == "") {
       port = 8000;
