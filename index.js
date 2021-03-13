@@ -81,7 +81,7 @@ const volMessage = Mongoose.model("volMessage", volschema);
     }
     const newpost=new postMessage(input);
       await newpost.save();
-      mail(inputvol.email)
+      mail(input.email)
       res.redirect("/")
        console.log(firstname);
     })
